@@ -31,7 +31,7 @@ function RatingModal(props){
          <TextField label='Rate out of 5' value={rating} onChange={handleChange}/>
        </DialogContent>
        <DialogActions>
-         <Button onClick={()=>{props.saveRating(props.appName,rating);}} style={{backgroundColor:'#fdd835',color:'white'}} >
+         <Button onClick={()=>{rating<=5?props.saveRating(props.appName,rating):alert('Rating must be less than or equal to 5 !')}} style={{backgroundColor:'#fdd835',color:'white'}} >
            Rate
          </Button>
          <Button onClick={props.handleClose} >
