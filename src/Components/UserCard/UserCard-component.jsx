@@ -1,7 +1,9 @@
 /*jshint esversion:9*/
 import React from 'react';
-import {Paper,Grid,Avatar,Typography} from '@material-ui/core';
+import {Paper,Grid,Avatar,Typography,Button} from '@material-ui/core';
 import './UserCard-style.scss';
+import AddIcon from '@material-ui/icons/Add';
+import Rating from '@material-ui/lab/Rating';
 
 function UserCard(props){
   const {name,accountId,app} = props;
@@ -20,7 +22,26 @@ function UserCard(props){
       <br/>
       <hr/>
       <Typography>App</Typography>
-      <Typography variant='h5'>{app}</Typography>
+      <Grid container>
+        <Grid item xs='9'>
+          <Typography variant='h5'>{app}</Typography>
+        </Grid>
+        <Grid item xs='3'>
+        {!props.rating?
+          <Button startIcon={<AddIcon/>} className='rateBtn' onClick={()=>{props.clickRating(props.appName)}}>
+          Rate
+        </Button>:
+      ''}
+
+        </Grid>
+      </Grid>
+      {props.rating?
+        <div>
+        <Rating name="read-only" precision={0.1} value={props.rating} readOnly />
+        </div>:
+        ''
+      }
+
     </Paper>
   )
 }

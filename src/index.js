@@ -5,6 +5,10 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import './index.css';
 import App from './App';
 import * as firebase from 'firebase';
+import {Provider} from 'react-redux';
+import store from './redux/store';
+import {persistGate} from 'redux-persist/integration/react';
+import {persistor} from './redux/store';
 
 
 const firebaseConfig = {
@@ -22,8 +26,12 @@ const firebaseConfig = {
 
 
 ReactDOM.render(
+  <Provider store={store}>
   <Router>
+  <persistGate persistor={persistor}>
     <App />
-  </Router>,
+  </persistGate>
+  </Router>
+  </Provider>,
   document.getElementById('root')
 );

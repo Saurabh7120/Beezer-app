@@ -1,6 +1,15 @@
 .card{
-  height:230px;
+  color:white!important;
+  height:250px;
   width:80%;
   padding:10px;
-  background-color:#89c9b8!important;
+  background-color:#222831!important;
+
+  .rateBtn{
+    background-color: #FFEB3B;
+
+    &:hover{
+      cursor:'pointer'!important;
+    }
+  }
 }

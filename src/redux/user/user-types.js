@@ -1,0 +1,7 @@
+/*jshint esversion:9*/
+export const UserActionTypes = {
+  SET_USER_LIST:'SET_USER_LIST',
+  SET_ACCOUNT_LIST:'SET_ACCOUNT_LIST',
+  SET_RATING_LIST:'SET_RATING_LIST',
+  ADD_RATING_DETAIL:'ADD_RATING_DETAIL'
+};
